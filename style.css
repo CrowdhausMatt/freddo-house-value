@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#house-value {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#freddo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.freddo {
+    position: absolute;
+    width: 45px;  /* 10% smaller */
+    height: 45px; /* 10% smaller */
+    background-image: url('freddo.png'); /* Ensure the path is correct */
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: top 0.2s ease, transform 2s ease; /* Tumbling effect */
+}
+
+@keyframes tumble {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(calc(100vh - 45px)) rotate(360deg);
+    }
+}
+
+#result-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid #000;
+    padding: 20px;
+    text-align: center;
+    display: none; /* Hide initially */
+    z-index: 10; /* In front of everything else */
+}
+
+#result-popup img {
+    width: 100px; /* Size of the Freddo bar image */
+    height: auto;
+}
+
+#result-popup span {
+    display: block;
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}

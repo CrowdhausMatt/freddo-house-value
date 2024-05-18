@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Value in Freddos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>House Value in Freddos</h1>
+        <input type="number" id="house-value" placeholder="Enter your house value" />
+        <button onclick="calculateFreddos()">Calculate</button>
+    </div>
+    <div id="freddo-container"></div>
+    <div id="result-popup">
+        <img src="freddo.png" alt="Freddo">
+        <span id="freddo-count"></span>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
