@@ -8,6 +8,7 @@ body {
     margin: 0;
     background-color: #f5f5f5;
     overflow: hidden;
+    position: relative; /* Ensure child elements can be positioned absolutely */
 }
 
 .container {
@@ -80,4 +81,13 @@ button {
     margin-top: 10px;
     font-size: 24px;
     font-weight: bold;
+}
+
+#company-logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+    z-index: 100; /* Ensure it is on top of other elements */
 }

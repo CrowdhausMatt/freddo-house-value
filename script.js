@@ -80,7 +80,7 @@ function createFreddos(count, duration) {
 
     // Display the popup after 20 seconds and hide it after 10 seconds
     setTimeout(() => {
-        freddoCountElement.innerHTML = `Your house is worth!<br>${count} Freddos`;
+        freddoCountElement.innerHTML = `Your house is worth<br>${count} Freddos`;
         popup.style.display = 'block';
         setTimeout(() => {
             popup.style.display = 'none';
