@@ -18,16 +18,19 @@ Runner.run(Runner.create(), engine);
 
 function calculateFreddos() {
     const houseValue = parseInt(document.getElementById('house-value').value);
-    const freddoPrice = 0.25; // Adjust the price as necessary
-    const numberOfFreddos = Math.floor(houseValue / freddoPrice);
+    const currentFreddoPrice = 0.25; // Current price of a Freddo bar
+    const freddoPrice2006 = 0.10; // Price of a Freddo bar in 2006
+
+    const numberOfCurrentFreddos = Math.floor(houseValue / currentFreddoPrice);
+    const numberOf2006Freddos = Math.floor(houseValue / freddoPrice2006);
     
     // Set the total duration to 25 seconds (25000 milliseconds)
     const duration = 25000; // 25 seconds
 
-    createFreddos(numberOfFreddos, duration);
+    createFreddos(numberOfCurrentFreddos, numberOf2006Freddos, duration);
 }
 
-function createFreddos(count, duration) {
+function createFreddos(currentCount, count2006, duration) {
     const popup = document.getElementById('result-popup');
     const freddoCountElement = document.getElementById('freddo-count');
     
@@ -45,13 +48,13 @@ function createFreddos(count, duration) {
     let currentFreddos = 0;
 
     // Calculate the interval time to generate all Freddos within the specified duration
-    const intervalTime = duration / count;
+    const intervalTime = duration / currentCount;
     
     // Fall duration for each Freddo to complete its fall within the total duration
     const fallDuration = duration / 1000; // Convert to seconds
 
     const interval = setInterval(() => {
-        if (currentFreddos >= count) {
+        if (currentFreddos >= currentCount) {
             clearInterval(interval);
             return;
         }
@@ -80,7 +83,7 @@ function createFreddos(count, duration) {
 
     // Display the popup after 20 seconds and hide it after 10 seconds
     setTimeout(() => {
-        freddoCountElement.innerHTML = `Your house is worth<br>${count} Freddos`;
+        freddoCountElement.innerHTML = `Your house is worth:<br>${currentCount} Freddo bars today.<br>In 2006 it would have been worth ${count2006} Freddo bars.`;
         popup.style.display = 'block';
         setTimeout(() => {
             popup.style.display = 'none';
